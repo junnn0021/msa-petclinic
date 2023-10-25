@@ -1,13 +1,6 @@
 steps:
-- name: 'login_build'
-  entrypoint: 'bash'
-  args: 
-  - '-c'
-  - |
-    docker build -t asia-northeast3-docker.pkg.dev/pelagic-fin-402600/artifact-registry-ci/adservice:$SHORT_SHA .
-    docker build -t asia-northeast3-docker.pkg.dev/pelagic-fin-402600/artifact-registry-ci/adservice:latest .
-    docker push asia-northeast3-docker.pkg.dev/pelagic-fin-402600/artifact-registry-ci/adservice:$SHORT_SHA
-    docker push asia-northeast3-docker.pkg.dev/pelagic-fin-402600/artifact-registry-ci/adservice:latest
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "asia-northeast3-docker.pkg.dev/pelagic-fin-402600/artifact-registry-ci/api-main:$SHORT_SHA", "."]
 
-options:
-  logging: 'CLOUD_LOGGING_ONLY'
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "asia-northeast3-docker.pkg.dev/pelagic-fin-402600/artifact-registry-ci/api-main:$SHORT_SHA"]
