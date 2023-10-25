@@ -3,9 +3,9 @@ apiVersion: networking.gke.io/v1
 kind: ManagedCertificate
 metadata:
   name: gcpzg-cert
-spec:
-  domains:
-    - {{ .Values.domain }}
+# spec:
+#   domains:
+#     - {{ .Values.domain }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
