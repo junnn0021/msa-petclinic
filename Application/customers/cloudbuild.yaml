@@ -1,0 +1,10 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "asia-northeast3-docker.pkg.dev/pelagic-fin-402600/artifact-registry-ci/customers:$SHORT_SHA", "Application/customers"]
+
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "asia-northeast3-docker.pkg.dev/pelagic-fin-402600/artifact-registry-ci/customers:$SHORT_SHA"]
+
+options:
+  logging: 'CLOUD_LOGGING_ONLY'
+  
