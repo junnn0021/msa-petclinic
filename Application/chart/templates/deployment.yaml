@@ -70,24 +70,24 @@ spec:
           name: customers
           ports:
             - containerPort: 8080
-          env:
-            - name: MYSQL_HOSTINFO
-              valueFrom:
-                configMapKeyRef:
-                  name: mysql-config
-                  key: hostinfo
-            - name: MYSQL_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-credential
-                  key: username
-            - name: MYSQL_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-credential
-                  key: password
-            - name: spring.profiles.active
-              value: mysql
+          # env:
+          #   - name: MYSQL_HOSTINFO
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: mysql-config
+          #         key: hostinfo
+          #   - name: MYSQL_USERNAME
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: mysql-credential
+          #         key: username
+          #   - name: MYSQL_PASSWORD
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: mysql-credential
+          #         key: password
+          #   - name: spring.profiles.active
+          #     value: mysql
           resources:
             requests:
               cpu: {{ .Values.resources.requests.cpu }}
@@ -131,24 +131,24 @@ spec:
           name: vets
           ports:
             - containerPort: 8080
-          env:
-            - name: MYSQL_HOSTINFO
-              valueFrom:
-                configMapKeyRef:
-                  name: mysql-config
-                  key: hostinfo
-            - name: MYSQL_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-credential
-                  key: username
-            - name: MYSQL_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-credential
-                  key: password
-            - name: spring.profiles.active
-              value: mysql
+          # env:
+          #   - name: MYSQL_HOSTINFO
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: mysql-config
+          #         key: hostinfo
+          #   - name: MYSQL_USERNAME
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: mysql-credential
+          #         key: username
+          #   - name: MYSQL_PASSWORD
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: mysql-credential
+          #         key: password
+          #   - name: spring.profiles.active
+          #     value: mysql
           resources:
             requests:
               cpu: {{ .Values.resources.requests.cpu }}
@@ -192,24 +192,24 @@ spec:
           name: visits
           ports:
             - containerPort: 8080
-          env:
-            - name: MYSQL_HOSTINFO
-              valueFrom:
-                configMapKeyRef:
-                  name: mysql-config
-                  key: hostinfo
-            - name: MYSQL_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-credential
-                  key: username
-            - name: MYSQL_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-credential
-                  key: password
-            - name: spring.profiles.active
-              value: mysql
+          # env:
+          #   - name: MYSQL_HOSTINFO
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: mysql-config
+          #         key: hostinfo
+          #   - name: MYSQL_USERNAME
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: mysql-credential
+          #         key: username
+          #   - name: MYSQL_PASSWORD
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: mysql-credential
+          #         key: password
+          #   - name: spring.profiles.active
+          #     value: mysql
           resources:
             requests:
               cpu: {{ .Values.resources.requests.cpu }}

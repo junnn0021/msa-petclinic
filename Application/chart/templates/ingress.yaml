@@ -1,8 +1,8 @@
 ---
-apiVersion: networking.gke.io/v1
-kind: ManagedCertificate
-metadata:
-  name: gcpzg-cert
+# apiVersion: networking.gke.io/v1
+# kind: ManagedCertificate
+# metadata:
+#   name: gcpzg-cert
 # spec:
 #   domains:
 #     - {{ .Values.domain }}
@@ -14,7 +14,7 @@ metadata:
   annotations:
     # networking.gke.io/managed-certificates: "gcpzg-cert"
     kubernetes.io/ingress.global-static-ip-name: {{ .Values.public_ip }} # 고정IP 이름
-    kubernetes.io/ingress.class: "gce"
+    # kubernetes.io/ingress.class: "gce"
 spec:
   defaultBackend:
     service:
