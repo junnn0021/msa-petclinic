@@ -7,8 +7,8 @@ spec:
   project: default
 
   source:
-    repoURL: 'https://github.com/ryullulala/gcpzg-petclinic-chart'
-    path: .
+    repoURL: 'https://github.com/junnn0021/msa-petclinic'
+    path: ./Application/chart
     targetRevision: HEAD
     helm:
       valueFiles:
