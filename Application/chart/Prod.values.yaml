@@ -4,8 +4,8 @@ image:
   vets: asia-northeast3-docker.pkg.dev/pelagic-fin-402600/artifact-registry-ci/vets:50587ec
   visits: asia-northeast3-docker.pkg.dev/pelagic-fin-402600/artifact-registry-ci/visits:48fcc1f
 
-hostinfo: 10.182.103.19:3306
-public_ip: "petclinic"
+# hostinfo: 10.182.103.19:3306
+public_ip: petclinic
 domain: www.petclinic.shop
 
 resources:
