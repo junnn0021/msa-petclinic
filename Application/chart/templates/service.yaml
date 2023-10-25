@@ -2,8 +2,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    cloud.google.com/backend-config: '{"ports": {"8080":"api-gateway-be"}}'
+  # annotations:
+  #   cloud.google.com/backend-config: '{"ports": {"8080":"api-gateway-be"}}'
   name: api-gateway
   labels:
     app: spring-petclinic
@@ -20,8 +20,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    cloud.google.com/backend-config: '{"ports": {"8080":"customer-be"}}'
+  # annotations:
+  #   cloud.google.com/backend-config: '{"ports": {"8080":"customer-be"}}'
   name: customers-service
   labels:
     app: spring-petclinic
@@ -38,8 +38,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    cloud.google.com/backend-config: '{"ports": {"8080":"vets-be"}}'
+  # annotations:
+  #   cloud.google.com/backend-config: '{"ports": {"8080":"vets-be"}}'
   name: vets-service
   labels:
     app: spring-petclinic
@@ -56,8 +56,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    cloud.google.com/backend-config: '{"ports": {"8080":"visits-be"}}'
+  # annotations:
+  #   cloud.google.com/backend-config: '{"ports": {"8080":"visits-be"}}'
   name: visits-service
   labels:
     app: spring-petclinic
