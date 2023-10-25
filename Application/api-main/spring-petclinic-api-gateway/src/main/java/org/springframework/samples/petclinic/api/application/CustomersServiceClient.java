@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2017 the original author or authors.
+ * Copyright 2002-2021 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,8 @@ package org.springframework.samples.petclinic.api.application;
 import lombok.RequiredArgsConstructor;
 import org.springframework.samples.petclinic.api.dto.OwnerDetails;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 /**
  * @author Maciej Szarlinski
@@ -27,9 +28,12 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class CustomersServiceClient {
 
-    private final RestTemplate loadBalancedRestTemplate;
+    private final WebClient.Builder webClientBuilder;
 
-    public OwnerDetails getOwner(final int ownerId) {
-        return loadBalancedRestTemplate.getForObject("http://customers-service/owners/{ownerId}", OwnerDetails.class, ownerId);
+    public Mono<OwnerDetails> getOwner(final int ownerId) {
+        return webClientBuilder.build().get()
+            .uri("http://customers-service/owners/{ownerId}", ownerId)
+            .retrieve()
+            .bodyToMono(OwnerDetails.class);
     }
 }
