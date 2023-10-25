@@ -11,10 +11,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress
-  annotations:
-    # networking.gke.io/managed-certificates: "gcpzg-cert"
-    # kubernetes.io/ingress.global-static-ip-name: {{ .Values.public_ip }} # 고정IP 이름
-    # kubernetes.io/ingress.class: "gce"
+  # annotations:
+  #   networking.gke.io/managed-certificates: "gcpzg-cert"
+  #   kubernetes.io/ingress.global-static-ip-name: {{ .Values.public_ip }} # 고정IP 이름
+  #   kubernetes.io/ingress.class: "gce"
 spec:
   defaultBackend:
     service:
@@ -31,7 +31,6 @@ spec:
                 name: api-gateway
                 port:
                   number: 8080
-  ip: 203.0.113.10
           - path: /api/customer
             pathType: Prefix
             backend:
@@ -60,4 +59,5 @@ spec:
                 name: api-gateway
                 port:
                   number: 8080
+  ip: 203.0.113.10
 ---
