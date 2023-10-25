@@ -12,7 +12,7 @@ kind: Ingress
 metadata:
   name: ingress
   annotations:
-    networking.gke.io/managed-certificates: "gcpzg-cert"
+    # networking.gke.io/managed-certificates: "gcpzg-cert"
     kubernetes.io/ingress.global-static-ip-name: {{ .Values.public_ip }} # 고정IP 이름
     kubernetes.io/ingress.class: "gce"
 spec:
