@@ -21,6 +21,6 @@ metadata:
   labels:
     app: spring-petclinic
 data:
-  password: qwe123!@# # petclinic
-  username: root # petclinic
+  password: cXdlMTIzIUAj # petclinic
+  username: cm9vdA== # petclinic
 ---
